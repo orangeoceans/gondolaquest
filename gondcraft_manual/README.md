@@ -10,7 +10,7 @@ All instructions and specifications included in this manual are up-to-date at th
 
 ## Privacy notice
 
-The voidship is equipped with the computer system GOND-OS 85 that is necessary to all non-emergency function. As part of the voidship's function and continuous self-improvement, GOND-OS 85 will record any data it finds useful, which may be shared with other GOND-OS 85 systems for any purpoes it finds relevant. 
+The voidship's equipped computer system GOND-OS 85 is necessary to all non-emergency function. As part of the voidship's function and continuous self-improvement, GOND-OS 85 will record any data it finds useful, which may be shared with other GOND-OS 85 systems for any purpoes it finds relevant. 
 
 ## Table of Contents
 1. Life suppport systems
