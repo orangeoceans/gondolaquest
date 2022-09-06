@@ -1,2 +1,3 @@
 kramdown:
   parse_block_html: true
+  baseurl: /gondolaquest
