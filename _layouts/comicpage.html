@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <style>
+  .content {
+    max-width: 600px;
+    margin: auto;
+  }
+  .heading {
+    font-family: Helvetica, sans-serif;
+    max-width: 600px;
+    margin: auto;
+  }
+  .body_text {
+    font-family: Helvetica, sans-serif;
+    font-size: large;
+  }
+  .body_quote {
+    max-width: 500px;
+    margin: auto;
+    font-family: Monaco, monospace;
+  }
+  .nav_link {
+    max-width: 600px;
+    margin: auto;
+    font-family: Monaco, monospace;
+  }
+  </style>
+  <head>
+    <meta charset="utf-8">
+    <title>gondolaquest</title>
+  </head>
+  {% if page.chapter_id == 0 %}
+  <body style="background-color:white;">
+  {% elsif page.chapter_id == 1.1 %}
+  <body style="background-color:rgb(255,220,220);">
+  {% elsif page.chapter_id == 1.2 %}
+  <body style="background-color:lightsalmon;">
+  {% endif %}
+    
+    <div class="heading">
+      <h1> gondolaquest | {{page.chapter_id | floor}}.{{page.page_id}} </h1>
+    </div>
+    <hr>
+
+    {% if page.prev_link != "None" %}
+    <div class="nav_link">
+      <h1> (<a href="{{page.prev_link}}">Prev</a>) >{{page.prev_link_text}} </h1>
+    </div>
+    {% endif %}
+
+    {{ content }}
+
+    <div class="nav_link">
+      {% if page.next_link == "None" %}
+        <h1> >{{page.next_link_text}} </h1>
+      {% else %}
+        <h1> <a href="{{page.next_link}}">{{>page.next_link_text}} </a> </h1>
+      {% endif %}
+    </div>
+
+  </body>
+</html>
