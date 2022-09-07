@@ -52,16 +52,24 @@
     </div>
     <hr>
 
-    {% if page.prev_link != "None" %}
     <div class="nav_link">
-      <h1> (<a href="{{page.prev_link}}">Prev</a>) >{{page.prev_link_text}} </h1>
+      {% if page.prev_link == nil %}
+        {% capture prev_link %} /gondolaquest/chapter_{{page.chapter_id | floor}}/page_{{page.page_id | minus: 1}}/page.html {% endcapture %}
+        <h1> (<a href="{{prev_link}}">Prev</a>) >{{page.prev_link_text}} </h1>
+      {% elsif page.prev_link == "None" %}
+        <h1> >{{page.prev_link_text}} </h1>
+      {% else %}
+        <h1> (<a href="{{page.prev_link}}">Prev</a>) >{{page.prev_link_text}} </h1>
+      {% endif %}
     </div>
-    {% endif %}
 
     {{ content }}
 
     <div class="nav_link">
-      {% if page.next_link == "None" %}
+      {% if page.next_link == nil %}
+        {% capture next_link %} /gondolaquest/chapter_{{page.chapter_id | floor}}/page_{{page.page_id | plus: 1}}/page.html {% endcapture %}
+        <h1> <a href="{{next_link}}"> >{{page.next_link_text}} </a> </h1>
+      {% elsif page.next_link == "None" %}
         <h1> >{{page.next_link_text}} </h1>
       {% else %}
         <h1> <a href="{{page.next_link}}"> >{{page.next_link_text}} </a> </h1>
