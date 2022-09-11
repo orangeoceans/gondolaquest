@@ -1,6 +1,13 @@
 <!doctype html>
 <html>
   <style>
+  .right{
+    float:right;
+  }
+  .left{
+    float:left;
+  }
+
   .content {
     max-width: 640px;
     margin: auto;
@@ -9,6 +16,12 @@
     font-family: Helvetica, sans-serif;
     max-width: 640px;
     margin: auto;
+  }
+  .footer {
+    font-family: Helvetica, sans-serif;
+    max-width: 640px;
+    margin: auto;
+    text-align: center;
   }
   .panel {
     display: block;
@@ -21,6 +34,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .body_text {
     font-family: Helvetica, sans-serif;
     font-size: large;
@@ -44,6 +58,12 @@
     font-family: Monaco, monospace;
     font-size: x-large;
   }
+  a { text-decoration: none; }
+hr {
+    height: 0px;
+    border: none;
+    border-top: 1.4px solid black;
+}
   </style>
   <head>
     <meta charset="utf-8">
@@ -58,9 +78,10 @@
   {% endif %}
     
     <div class="heading">
-      <h1> gondolaquest | {{page.chapter_id | floor}}.{{page.page_id}} </h1>
+      <h1> gondolaquest | {{page.chapter_id | floor}}.{{page.page_id}} </h1> <hr>
+      <span class="left"><a href="/gondolaquest/index.html">First</a> | <a href="/gondolaquest/chapter_1/page_50/page.html">Latest</a></span> <span class="right"><a href="https://github.com/orangeoceans/gondolaquest">Github</a> | <a href="https://discord.gg/RpDFxJrjt5">Discord</a> | <a href="https://github.com/orangeoceans/gondolaquest/issues/new">Submit command</a></span> <br>
+      <hr>
     </div>
-    <hr>
 
     <div class="nav_link">
       {% if page.prev_link == nil %}
@@ -71,7 +92,9 @@
           <h1> (<a href="{{prev_link}}">Prev</a>) >{{page.prev_link_text}} </h1>
         {% endif %}
       {% elsif page.prev_link == "None" %}
-        <h1> >{{page.prev_link_text}} </h1>
+        {% if page.prev_link_text != nil %}
+          <h1> >{{page.prev_link_text}} </h1>
+        {% endif %}
       {% else %}
         <h1> (<a href="{{page.prev_link}}">Prev</a>) >{{page.prev_link_text}} </h1>
       {% endif %}
