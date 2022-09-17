@@ -110,7 +110,11 @@ hr {
           <h1> <a href="{{next_link}}"> >{{page.next_link_text}} </a> </h1>
         {% endif %}
       {% elsif page.next_link == "None" %}
-        <h1> >{{page.next_link_text}} </h1>
+        {% if page.next_link_text != nil %}
+          <h1> >{{page.next_link_text}} </h1>
+        {% else %}
+          <h1> >You have reached the latest page. <a href="https://github.com/orangeoceans/gondolaquest">Submit a command</a> or join our <a href="https://discord.gg/RpDFxJrjt5">Discord</a> for updates & feedback.</h1>
+        {% endif %}
       {% else %}
         <h1> <a href="{{page.next_link}}"> >{{page.next_link_text}} </a> </h1>
       {% endif %}
