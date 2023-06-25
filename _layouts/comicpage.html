@@ -92,7 +92,7 @@ hr {
   </style>
   <head>
     <meta charset="utf-8">
-    <title>gondolaquest | {{page.chapter_id | floor}}.{{page.page_id}}</title>
+    <title>gondolaquest | {{page.chapter_id | string | split: "." | first}}.{{page.page_id}}</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S78PRHPZ1"></script>
