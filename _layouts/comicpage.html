@@ -114,11 +114,13 @@ hr {
   <body style="background-color:rgb(239, 255, 188);">
   {% elsif page.chapter_id == "A.1" %}
   <body style="background-color:rgb(196, 196, 196);">
+  {% elsif page.chapter_id == 2.1 %}
+  <body style="background-color:rgb(239, 255, 188);">
   {% endif %}
     
     <div class="heading">
       <h1> gondolaquest | {{page.chapter_id | string | split: "." | first }}.{{page.page_id}} </h1> <hr>
-      <span class="left"><a href="/gondolaquest/index.html">First page</a> | <a href="/gondolaquest/chapter_A/page_16/page.html">Newest page</a></span> <span class="right"><a href="https://github.com/orangeoceans/gondolaquest">Github</a> | <a href="https://discord.gg/RpDFxJrjt5">Discord</a> | <a href="https://github.com/orangeoceans/gondolaquest/issues/new">Submit command</a></span> <br>
+      <span class="left"><a href="/gondolaquest/index.html">First page</a> | <a href="/gondolaquest/chapter_2/page_2/page.html">Newest page</a></span> <span class="right"><a href="https://github.com/orangeoceans/gondolaquest">Github</a> | <a href="https://discord.gg/RpDFxJrjt5">Discord</a> | <a href="https://github.com/orangeoceans/gondolaquest/issues/new">Submit command</a></span> <br>
       <hr>
     </div>
 
@@ -153,7 +155,7 @@ hr {
         {% if page.next_link_text != nil %}
           <h1> >{{page.next_link_text}} </h1>
         {% else %}
-          <h1> >You have reached the latest page. <a href="https://github.com/orangeoceans/gondolaquest">Command submissions are closed during Intermission A.</a> <br> Join our <a href="https://discord.gg/RpDFxJrjt5">Discord</a> for updates & feedback.</h1>
+          <h1> >You have reached the latest page. <a href="https://github.com/orangeoceans/gondolaquest">Submit a command on Github!</a> <br> Join our <a href="https://discord.gg/RpDFxJrjt5">Discord</a> for updates & feedback.</h1>
         {% endif %}
       {% else %}
         <h1> <a href="{{page.next_link}}"> >{{page.next_link_text}} </a> </h1>
