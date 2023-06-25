@@ -93,7 +93,7 @@ hr {
   <head>
     <meta charset="utf-8">
     <title>gondolaquest | {{page.chapter_id | floor}}.{{page.page_id}}</title>
-    <link rel="shortcut icon" type="image/png" href="/gondolaquest/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S78PRHPZ1"></script>
     <script>
@@ -120,13 +120,13 @@ hr {
     
     <div class="heading">
       <h1> gondolaquest | {{page.chapter_id | string | split: "." | first }}.{{page.page_id}} </h1> <hr>
-      <span class="left"><a href="/gondolaquest/index.html">First page</a> | <a href="/gondolaquest/chapter_2/page_2/page.html">Newest page</a></span> <span class="right"><a href="https://github.com/orangeoceans/gondolaquest">Github</a> | <a href="https://discord.gg/RpDFxJrjt5">Discord</a> | <a href="https://github.com/orangeoceans/gondolaquest/issues/new">Submit command</a></span> <br>
+      <span class="left"><a href="/index.html">First page</a> | <a href="/chapter_2/page_2/page.html">Newest page</a></span> <span class="right"><a href="https://github.com/orangeoceans/gondolaquest">Github</a> | <a href="https://discord.gg/RpDFxJrjt5">Discord</a> | <a href="https://github.com/orangeoceans/gondolaquest/issues/new">Submit command</a></span> <br>
       <hr>
     </div>
 
     <div class="nav_link">
       {% if page.prev_link == nil %}
-        {% capture prev_link %} /gondolaquest/chapter_{{page.chapter_id | string | split: "." | first }}/page_{{page.page_id | minus: 1}}/page.html {% endcapture %}
+        {% capture prev_link %} /chapter_{{page.chapter_id | string | split: "." | first }}/page_{{page.page_id | minus: 1}}/page.html {% endcapture %}
         {% if page.prev_link_text == "=" %}
           <h1> (<a href="{{prev_link}}">Prev</a>) =====> </h1>
         {% else %}
@@ -145,7 +145,7 @@ hr {
 
     <div class="nav_link">
       {% if page.next_link == nil %}
-        {% capture next_link %} /gondolaquest/chapter_{{page.chapter_id | string | split: "." | first }}/page_{{page.page_id | plus: 1}}/page.html {% endcapture %}
+        {% capture next_link %} /chapter_{{page.chapter_id | string | split: "." | first }}/page_{{page.page_id | plus: 1}}/page.html {% endcapture %}
         {% if page.next_link_text == "=" %}
           <h1> <a href="{{next_link}}"> =====> </a> </h1>
         {% else %}
