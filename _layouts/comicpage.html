@@ -59,6 +59,12 @@
     font-family: Monaco, monospace;
     font-size: large;
   }
+  .body_quote_xl {
+    max-width: 500px;
+    margin: auto;
+    font-family: Monaco, monospace;
+    font-size: x-large;
+  }
   .body_quote_zh {
     max-width: 500px;
     margin: auto;
@@ -131,7 +137,7 @@ hr {
     
     <div class="heading">
       <h1> gondolaquest | {{page.chapter_id | string | split: "." | first }}.{{page.page_id}} </h1> <hr>
-      <span class="left"><a href="/index.html">First page</a> | <a href="/chapter_2/page_12/page.html">Newest page</a></span> <span class="right"><a href="https://discord.gg/RpDFxJrjt5">Discord</a> | <a href="https://github.com/orangeoceans/gondolaquest">Github</a> | <a href="https://github.com/orangeoceans/gondolaquest/issues/new">Submit command</a></span> <br>
+      <span class="left"><a href="/index.html">First page</a> | <a href="/chapter_2/page_13/page.html">Newest page</a></span> <span class="right"><a href="https://discord.gg/RpDFxJrjt5">Discord</a> | <a href="https://github.com/orangeoceans/gondolaquest">Github</a> | <a href="https://github.com/orangeoceans/gondolaquest/issues/new">Submit command</a></span> <br>
       <hr>
     </div>
 
@@ -166,12 +172,18 @@ hr {
         {% if page.next_link_text != nil %}
           <h1> >{{page.next_link_text}} </h1>
         {% else %}
-          <h1> >You have reached the latest page. <a href="https://github.com/orangeoceans/gondolaquest">Submit a command on Github!</a> <br> Join our <a href="https://discord.gg/RpDFxJrjt5">Discord</a> for updates & feedback.</h1>
+          <h1> >You have reached the latest page. <a href="https://github.com/orangeoceans/gondolaquest">Submit a command on Github</a> <br> & join our <a href="https://discord.gg/RpDFxJrjt5">Discord</a> for updates.</h1>
         {% endif %}
       {% else %}
         <h1> <a href="{{page.next_link}}"> >{{page.next_link_text}} </a> </h1>
       {% endif %}
     </div>
+
+    {% if page.footnotes != nil %}
+    <div class="footer"><hr></div>
+      {{ page.footnotes }}
+    <br>
+    {% endif %}
 
     <div class="footer">
       <hr>
